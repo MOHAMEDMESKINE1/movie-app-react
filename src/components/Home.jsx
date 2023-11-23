@@ -1,0 +1,243 @@
+import React, { useEffect, useState } from 'react';
+import spider from '../assets/spider.jpg'
+import man from '../assets/man.jpg'
+import show from '../assets/show.jpg'
+import stage from '../assets/stage.jpg'
+import snow from '../assets/snow.jpg'
+import art from '../assets/art_.jpg'
+import batman from '../assets/batman.jpg'
+import sitting from '../assets/sitting.jpg'
+import wild from '../assets/wild.jpg'
+import album from '../assets/album.png'
+import vintage from '../assets/vintage.jpg'
+import malficent from '../assets/malficent.jpg'
+import jocker from '../assets/jocker.jpg'
+import { Card } from 'flowbite-react';
+import { Carousel } from 'flowbite-react';
+import $ from 'jquery';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+export default function Home() {
+
+    function scrollToTop() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 'slow');
+      }
+  
+      // Show/hide the button based on scroll position
+      $(window).scroll(function() {
+        var btn = $("#scrollToTopBtn");
+        if ($(this).scrollTop() > 20) {
+          btn.show();
+        } else {
+          btn.hide();
+        }
+      });
+   
+
+    const [backgroundIndex, setBackgroundIndex] = useState(0);
+    const images = [stage,man,show ];
+  
+    const sectionStyle = {
+        backgroundImage: `url(${images[backgroundIndex]})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '600px',
+        transition:"background-image 2s ease"
+        
+    }
+    
+    const stationSection = {
+        backgroundImage: `url(${sitting})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '950px',
+       
+      
+    }
+   
+
+      useEffect(() => {
+        const intervalId = setInterval(() => {
+          setBackgroundIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 5000);
+    
+        return () => clearInterval(intervalId); // Cleanup the interval when the component unmounts
+    
+      }, [backgroundIndex, images.length]);
+    return (
+        <>
+            {/* home section */}
+            <section  style={sectionStyle}>
+                <div className="h-screen flex items-center justify-center  min-w-full">
+                <div className=' flex items-center flex-col justify-center ' data-aos-easing="ease-in-sine"  data-aos-duration="3000"  data-aos='fade-right'>
+                <h1 className='uppercase text-white font-bold  text-8xl md:text-9xl text-center text-shadow-lg'   >PELICULA </h1>
+                    <p className='lead uppercase text-white  text-center font-bold my-5 text-5xl'>a modern way  to watch movies & series </p>
+                    <div   className="flex flex-col  md:flex-row justify-start w-1/2  my-12">
+                        <Link  to={"/movies"} className=' bg-transparent hover:bg-black  rounded-sm  text-center shadow-lg  hover:text-white p-5 mb-2 md:mb-0 md:w-full mx-2 border-2 uppercase text-white font-boldl  '><span className="">Explore Movies</span></Link>
+                        <Link to={"/tvshows"} className=' bg-transparent hover:bg-black  rounded-sm  text-center shadow-lg  hover:text-white p-5  md:w-full mx-2 border-2 uppercase text-white font-bold  '>Explore TvShows</Link>
+
+                    </div>
+                </div>
+                   
+                </div>
+            </section>
+            {/* section  */}
+            <section className=" p-2 md:p-5 bg-gray-100">
+                   
+                <div className='flex flex-col justify-center items-center my-14'>
+                    <h1 className=" text-gray-500  p-1.5   text-xl  font-extrabold">
+                        STUNNING HOMEPAGE COLLECTION
+                    </h1>
+                    <p className="text-4xl md:text-6xl">
+                        LIGHTS, CAMERA, PELICULA!  
+                    </p>
+                </div>
+
+                
+                <div className=" grid grid-cols-1  m-auto md:grid-cols-3  gap-2 "    data-aos='fade-up' >
+    
+                    
+                    <Card
+                        className=""
+                        renderImage={() => <img className='rounded-t-lg   object-cover w-full h-52' src={wild} alt="image 1" />}
+                       
+                        >
+                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                           Wild New Release  2023
+                        </h5>
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            Here are the biggest movies about Nature and Wild Exlpore movie and live the nature.
+                        </p>
+                    </Card>
+                   
+                    
+                    <Card
+                        className=""
+                        renderImage={() => <img className='rounded-t-lg   object-fill w-full h-52' src={snow} alt="image 1" />}
+                        >
+                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                           Journey to Alaska  2022
+                        </h5>
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            A Journey to Alaska and explore its secrets and why its so special ..
+                        </p>
+                        </Card>
+                   
+                    <Card
+                        className=""
+                        renderImage={() => <img className='rounded-t-lg   object-cover w-full h-52' src={batman} alt="image 1" />}
+                        >
+                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            The New Batman 2021
+                        </h5>
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                           A fight between Evil and Good a new released movie one of the biggest watched movies until now .
+                        </p>
+                        </Card>
+                    
+                         
+                  
+                </div>
+                       
+            </section>
+
+
+            {/* section */}
+            <section className="   bg-gray-100 text-white" style={stationSection}>
+                <div className='flex flex-col justify-center items-center  py-12'>
+                        <h1 className="   p-1.5    text-xl  font-extrabold">
+                                PORTFOLIO LISTS & SINGLES
+                        </h1>
+                        <span data-aos="fade-up-right"  className='border-2 text-center w-52 border-gray-50'></span>
+
+                        <p className="text-5xl md:text-6xl font-bold mt-5  shadow-lg">
+                                LAST  POSTER MOVIES
+                        </p>
+                        
+                </div>
+              
+             
+                <div className="h-96 w-full bg-transparent p-2   md:p-5 ">
+                    <Carousel>
+
+                        <div className="flex h-full items-center justify-center  dark:text-white">
+                            <img src={spider} alt="" />
+                        </div>
+                        <div className="flex h-full items-center justify-center  dark:text-white">
+                            <img src={vintage} alt="" />
+                        </div>
+                        <div className="flex h-full items-center justify-center  dark:text-white">
+                            <img src={malficent} alt="" />
+                        </div>
+                        <div className="flex h-full items-center justify-center  dark:text-white">
+                            <img src={jocker} alt="" />
+                        </div>
+                    </Carousel>
+                </div>
+               
+                
+                <div className=' py-14 flex items-center justify-center'>
+                    <div className="text-center">
+                        <h1 className='text-5xl md:text-7xl font-bold'>DIRECT YOUR NEXT MASTERPIECE WITH PELICULA  </h1>
+                        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className=" mt-12 ">
+                            <Link
+                            to={'/blog'} 
+                            
+                            className=' bg-transparent hover:text-black   shadow-lg  hover:bg-white p-5  my-10 mx-2 border-2 uppercase text-white font-bold rounded-sm '>
+                                Explore  Our Blog
+                            </Link>
+                        </div>
+                      
+
+                    </div>                    
+                </div>
+
+               
+              
+              
+
+            </section>
+            {/* movies */}
+            <section className='m-5'>
+                    <div className=" grid md:grid-cols-2  m-auto  gap-2 py-5">
+                        
+                        <div data-aos='fade-right'  className="">
+                            <img src={album} className='h-auto object-cover ' alt="" />
+                        </div>
+                        
+                        <div className='md:py-36 p-3'>
+                            <h1 className="text-center text-3xl md:text-5xl font-bold mb-5">Advanced Movie & TV Show Search</h1>
+                            <p className="text-xl text-justify md:text-2xl font-light ">Discover movies and TV shows like never before with our advanced search system. Find your favorites effortlessly and explore new titles with ease.</p>
+                        </div>
+                    </div>
+
+            </section>
+            {/* movies */}
+            <section className='m-5'>
+                    <div className=" grid md:grid-cols-2  m-auto  gap-2 py-5">
+                        
+                       
+                        
+                        <div className='md:py-36 p-3'>
+                            <h1 className="text-center text-3xl md:text-5xl font-bold mb-5">Name Listing & Cast Management</h1>
+                            <p className="text-xl text-justify md:text-2xl font-light ">Effortlessly manage cast information and showcase talented individuals with Noxe. Enhance your website with comprehensive name listings and cast management features.</p>
+                        </div>
+                        <div data-aos='fade-up'  className="">
+                            <img src={art} className='h-auto w-auto  rounded-md shadow-lg ' alt="" />
+                        </div>
+                    </div>
+
+            </section>
+
+            <button onClick={scrollToTop} id="scrollToTopBtn" class="fixed bottom-20 right-5 bg-gray-900   text-white    border p-3 border-gray-300 cursor-pointer hidden">
+                <FontAwesomeIcon size='2'  icon={faArrowUp}/>
+               </button>
+        </>
+    );
+}
+
