@@ -2,8 +2,28 @@ import React from 'react';
 import Logo from '../assets/logoo.png'
 import { Link } from 'react-router-dom';
 import witcher from '../assets/witcher.jpeg'
+import $ from 'jquery';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
+    
+    function scrollToTop() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 'slow');
+      }
+  
+      // Show/hide the button based on scroll position
+      $(window).scroll(function() {
+        var btn = $("#scrollToTopBtn");
+        if ($(this).scrollTop() > 20) {
+          btn.show();
+        } else {
+          btn.hide();
+        }
+      });
+   
     const backGroundMovie = {
         
             backgroundImage: `url(${witcher})`,
@@ -33,7 +53,7 @@ function Footer() {
 
                                     </Link>
                             </div>
-                            <span class="text-sm text-gray-50 sm:text-center ">© 2023  <Link to="/" class="hover:underline">PELICULA </Link>. All Rights Reserved.</span>
+                            <span class="text-sm text-gray-500 sm:text-center ">© 2023  <Link to="/" class="hover:underline">PELICULA </Link>. All Rights Reserved.</span>
 
                         </div>
                         <div class="grid grid-cols-2 gap-5 sm:gap-8 sm:grid-cols-3 ">
@@ -93,6 +113,9 @@ function Footer() {
                     
                 </div>
             </footer>
+            <button onClick={scrollToTop} id="scrollToTopBtn" class="fixed bottom-20 right-10 md:right-5 bg-gray-900   text-white rounded-full   border p-3.5 border-gray-300 cursor-pointer hidden">
+                <FontAwesomeIcon   icon={faArrowUp} bounce/>
+            </button>
         </div>
     );
 }

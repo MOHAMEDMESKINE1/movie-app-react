@@ -12,30 +12,12 @@ import album from '../assets/album.png'
 import vintage from '../assets/vintage.jpg'
 import malficent from '../assets/malficent.jpg'
 import jocker from '../assets/jocker.jpg'
+import book from '../assets/book.jpg'
 import { Card } from 'flowbite-react';
 import { Carousel } from 'flowbite-react';
-import $ from 'jquery';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 export default function Home() {
 
-    function scrollToTop() {
-        $('html, body').animate({
-          scrollTop: 0
-        }, 'slow');
-      }
-  
-      // Show/hide the button based on scroll position
-      $(window).scroll(function() {
-        var btn = $("#scrollToTopBtn");
-        if ($(this).scrollTop() > 20) {
-          btn.show();
-        } else {
-          btn.hide();
-        }
-      });
-   
 
     const [backgroundIndex, setBackgroundIndex] = useState(0);
     const images = [stage,man,show ];
@@ -73,23 +55,23 @@ export default function Home() {
         <>
             {/* home section */}
             <section  style={sectionStyle}>
-                <div className="h-screen flex items-center justify-center  min-w-full">
-                <div className=' flex items-center flex-col justify-center ' data-aos-easing="ease-in-sine"  data-aos-duration="3000"  data-aos='fade-right'>
-                <h1 className='uppercase text-white font-bold  text-8xl md:text-9xl text-center text-shadow-lg'   >PELICULA </h1>
-                    <p className='lead uppercase text-white  text-center font-bold my-5 text-5xl'>a modern way  to watch movies & series </p>
-                    <div   className="flex flex-col  md:flex-row justify-start w-1/2  my-12">
-                        <Link  to={"/movies"} className=' bg-transparent hover:bg-black  rounded-sm  text-center shadow-lg  hover:text-white p-5 mb-2 md:mb-0 md:w-full mx-2 border-2 uppercase text-white font-boldl  '><span className="">Explore Movies</span></Link>
-                        <Link to={"/tvshows"} className=' bg-transparent hover:bg-black  rounded-sm  text-center shadow-lg  hover:text-white p-5  md:w-full mx-2 border-2 uppercase text-white font-bold  '>Explore TvShows</Link>
+                <div className="md:h-screen py-32 md:py-52 flex items-center justify-center  min-w-full">
+                    <div data-aos-easing="ease-in-sine"  data-aos-duration="2000"  data-aos='fade-right'  className=' flex items-center flex-col justify-center ' >
+                        <h1 className='uppercase text-white font-bold text-7xl md:text-9xl text-center text-shadow-lg'   >PELICULA </h1>
+                        <p className='lead uppercase text-white  text-center font-bold my-5 text-3xl md:text-5xl'>a modern way  to watch movies & series </p>
+                        <div   className="flex  flex-row  lg:flex-row justify-center md:justify-start w-1/2  my-12">
+                            <Link  to={"/movies"} className=' bg-transparent hover:bg-black  rounded-sm  text-center shadow-lg  hover:text-white  px-12 md:p-5    md:mb-0 md:w-full mx-2 border-2 uppercase text-white font-boldl  '><span className="">Explore Movies</span></Link>
+                            <Link to={"/tvshows"} className=' bg-transparent hover:bg-black  rounded-sm  text-center shadow-lg  hover:text-white  px-12 md:p-5    md:w-full mx-2 border-2 uppercase text-white font-bold  '>Explore TvShows</Link>
 
+                        </div>
                     </div>
-                </div>
                    
                 </div>
             </section>
             {/* section  */}
             <section className=" p-2 md:p-5 bg-gray-100">
                    
-                <div className='flex flex-col justify-center items-center my-14'>
+                <div className='flex flex-col justify-center text-center items-center my-14'>
                     <h1 className=" text-gray-500  p-1.5   text-xl  font-extrabold">
                         STUNNING HOMEPAGE COLLECTION
                     </h1>
@@ -99,7 +81,7 @@ export default function Home() {
                 </div>
 
                 
-                <div className=" grid grid-cols-1  m-auto md:grid-cols-3  gap-2 "    data-aos='fade-up' >
+                <div  data-aos='fade-up'  className=" grid grid-cols-1  m-5 md:grid-cols-3  gap-2 "   >
     
                     
                     <Card
@@ -149,7 +131,7 @@ export default function Home() {
 
             {/* section */}
             <section className="   bg-gray-100 text-white" style={stationSection}>
-                <div className='flex flex-col justify-center items-center  py-12'>
+                <div className='flex flex-col justify-center text-center items-center  py-12'>
                         <h1 className="   p-1.5    text-xl  font-extrabold">
                                 PORTFOLIO LISTS & SINGLES
                         </h1>
@@ -183,7 +165,7 @@ export default function Home() {
                 
                 <div className=' py-14 flex items-center justify-center'>
                     <div className="text-center">
-                        <h1 className='text-5xl md:text-7xl font-bold'>DIRECT YOUR NEXT MASTERPIECE WITH PELICULA  </h1>
+                        <h1 className='text-3xl m-5 md:text-7xl font-bold'>DIRECT YOUR NEXT MASTERPIECE WITH PELICULA  </h1>
                         <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className=" mt-12 ">
                             <Link
                             to={'/blog'} 
@@ -210,7 +192,7 @@ export default function Home() {
                             <img src={album} className='h-auto object-cover ' alt="" />
                         </div>
                         
-                        <div className='md:py-36 p-3'>
+                        <div className='md:py-36 p-3 m-5'>
                             <h1 className="text-center text-3xl md:text-5xl font-bold mb-5">Advanced Movie & TV Show Search</h1>
                             <p className="text-xl text-justify md:text-2xl font-light ">Discover movies and TV shows like never before with our advanced search system. Find your favorites effortlessly and explore new titles with ease.</p>
                         </div>
@@ -223,20 +205,18 @@ export default function Home() {
                         
                        
                         
-                        <div className='md:py-36 p-3'>
-                            <h1 className="text-center text-3xl md:text-5xl font-bold mb-5">Name Listing & Cast Management</h1>
-                            <p className="text-xl text-justify md:text-2xl font-light ">Effortlessly manage cast information and showcase talented individuals with Noxe. Enhance your website with comprehensive name listings and cast management features.</p>
+                        <div className='md:py-36 p-3 m-5'>
+                            <h1 className="text-center text-3xl md:text-5xl font-bold mb-5">Navigating the World of Books with Advanced Search</h1>
+                            <p className="text-xl text-justify md:text-2xl font-light ">Embark on a journey of literary discovery with our advanced search feature. Dive deep into the vast world of books, exploring genres, themes, and authors with precision and ease.</p>
                         </div>
                         <div data-aos='fade-up'  className="">
-                            <img src={art} className='h-auto w-auto  rounded-md shadow-lg ' alt="" />
+                            <img src={book} className='h-auto w-auto  rounded-md shadow-lg ' alt="" />
                         </div>
                     </div>
 
             </section>
 
-            <button onClick={scrollToTop} id="scrollToTopBtn" class="fixed bottom-20 right-5 bg-gray-900   text-white    border p-3 border-gray-300 cursor-pointer hidden">
-                <FontAwesomeIcon size='2'  icon={faArrowUp}/>
-               </button>
+            
         </>
     );
 }

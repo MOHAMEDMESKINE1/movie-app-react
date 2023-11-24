@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../assets/logoo.png'
 import { Link, Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBlog, faHome, faTvAlt, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faBlog, faBook, faHome, faTvAlt, faVideo } from '@fortawesome/free-solid-svg-icons';
 
 import { Avatar, Dropdown } from 'flowbite-react';
 function NavbarLayout() {
@@ -46,6 +46,12 @@ function NavbarLayout() {
                         Movies
                     </Link> 
                     </li>
+                    <li class="border-t md:border-none">
+                    <Link to={"/books"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                        <FontAwesomeIcon icon={faBook}   className=' text-xs text-gray-900 mr-2'/>
+                        Books
+                    </Link> 
+                    </li>
                     
                     <li class="border-t md:border-none">
                     <Link to={"/blog"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
@@ -53,6 +59,7 @@ function NavbarLayout() {
                         Blog
                     </Link> 
                     </li>
+                   
 
                     <div className="flex md:order-2 py-2 ">
                     <Dropdown

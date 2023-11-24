@@ -14,7 +14,7 @@ export default function Error404 () {
 				<div className=" text-white">
 					<div className="flex h-screen">
 						<div className="m-auto text-center">
-							<div>
+							<div data-aos="fade-up">
 								<svg width="631" height="379" viewBox="0 0 631 379" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<g clip-path="url(#clip0)">
 										<path
@@ -194,8 +194,8 @@ export default function Error404 () {
 							<p className="text-sm md:text-base text-cyan-900 p-2 mb-4">The stuff you were looking for doesn't exist
 							</p>
 							<Link to="/"
-								className="bg-transparent hover:bg-blue-900 text-blue-800 hover:text-blue-700 rounded shadow hover:shadow-lg py-2 px-4 border border-blue-300 hover:border-transparent">
-									Home 
+								className="self-center rounded-sm mt-5  border-2 text-2xl font-semibold whitespace-nowrap bg-transparent py-2 w-full px-5 bg-gradient-to-r to-gray-600 from-sky-400">
+									GO BACK HOME  
 							</Link>
 						</div>
 					</div>
