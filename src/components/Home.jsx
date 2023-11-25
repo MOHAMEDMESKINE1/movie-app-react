@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import spider from '../assets/spider.jpg'
 import man from '../assets/man.jpg'
 import show from '../assets/show.jpg'

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import useFetch from '../../customHooks/useFetch';
-import { apiKey } from '../../ApiKey/apikey';
+import { apiKey } from '../../ApiKey/key';
 function Blog() {
 
     const [movies, setMovies] = useState([]);

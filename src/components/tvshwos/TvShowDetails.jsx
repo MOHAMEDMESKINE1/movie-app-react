@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { apiKey } from '../../ApiKey/apikey';
+import { apiKey } from '../../ApiKey/key.js'
 import IsLoading from '../IsLoading';
 import useFetch from '../../customHooks/useFetch';
 import { Carousel } from 'flowbite-react';

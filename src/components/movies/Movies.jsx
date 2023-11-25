@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import useFetch from '../../customHooks/useFetch';
-import { apiKey } from '../../ApiKey/apikey';
+import { apiKey } from '../../ApiKey/key';
 import IsLoading from '../IsLoading';
 export default  function  Movies() {
 
