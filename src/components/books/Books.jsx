@@ -23,7 +23,8 @@ function Books() {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         height: '600px',
-        transition:"background-image 2s ease"
+        transition:"background-image 2s ease",
+       
         
     }
    
@@ -43,7 +44,7 @@ function Books() {
 
     return (
         <div>
-            <section  style={sectionStyle}>
+            <section className=' '  style={sectionStyle}>
                 <div className="md:h-screen py-48 flex items-center justify-center  min-w-full">
                     <div data-aos-easing="ease-in-sine"  data-aos-duration="1000"  data-aos='fade-right'  className=' flex items-center flex-col justify-center ' >
                         <h1 className='uppercase text-white font-bold text-7xl md:text-9xl text-center text-shadow-lg'   >BOOKS </h1>
@@ -76,11 +77,11 @@ function Books() {
                      
                 <h1 className="text-center text-4xl font-bold underline">Books</h1>
                 
-                <div   className='grid grid-cols-2  md:grid-cols-3  md:m-5   md:gap-2'>
+                <div   className='grid grid-cols-2  md:grid-cols-3  md:m-5  text-center  md:gap-2'>
                     
                         {
                         
-                            books.slice(0,8).map((book) => (
+                            books.slice(0,8).filter(book => book.volumeInfo.language==="en").map((book) => (
                                 // Check if the book has a thumbnail before rendering the div
                                 book.volumeInfo.imageLinks?.thumbnail && (
                                     <Link to={`/books/details/${book.id}`} key={book.id} className='m-auto'>
@@ -93,6 +94,12 @@ function Books() {
                                     />
                                     <p className='font-semibold mt-4 '>
                                         {book.volumeInfo.authors && book.volumeInfo.authors.join(', ')}
+                                    </p>
+                                    <p className='font-semi-bold text-indigo-700 '>
+                                        {book.volumeInfo.publishedDate && book.volumeInfo.publishedDate}
+                                    </p>
+                                    <p className='font-semi-bold text-green-700 '>
+                                        {book.volumeInfo.pageCount && book.volumeInfo.pageCount} Pages
                                     </p>
                                     </Link>
                                 )

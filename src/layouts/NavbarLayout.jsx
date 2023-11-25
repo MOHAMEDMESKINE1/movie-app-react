@@ -1,11 +1,32 @@
-import React from 'react';
+import  {useEffect, useState } from 'react';
 import Logo from '../assets/logoo.png'
 import { Link, Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBlog, faBook, faHome, faTvAlt, faVideo } from '@fortawesome/free-solid-svg-icons';
-
 import { Avatar, Dropdown } from 'flowbite-react';
+import LoginGoogle from '../components/login/LoginGoogle';
+
 function NavbarLayout() {
+    
+    const [loggedInUser, setLoggedInUser] = useState(null);
+    useEffect(() => {
+        // Check local storage for user data on page load
+        const storedUser = localStorage.getItem('loggedInUser');
+        if (storedUser) {
+          setLoggedInUser(JSON.parse(storedUser));
+        }
+    }, []);
+
+    const handleLogin = (user) => {
+       
+        localStorage.setItem('loggedInUser', JSON.stringify(user));
+        setLoggedInUser(user);
+    };
+    const handleLogout = () => {
+        // Clear the user's session 
+        localStorage.removeItem('loggedInUser');
+        setLoggedInUser(null);
+      };
     return (
         <>
         
@@ -46,12 +67,14 @@ function NavbarLayout() {
                         Movies
                     </Link> 
                     </li>
+                   
                     <li class="border-t md:border-none">
-                    <Link to={"/books"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
-                        <FontAwesomeIcon icon={faBook}   className=' text-xs text-gray-900 mr-2'/>
-                        Books
-                    </Link> 
+                        <Link to={"/books"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                            <FontAwesomeIcon icon={faBook}   className=' text-xs text-gray-900 mr-2'/>
+                            Books
+                        </Link> 
                     </li>
+                   
                     
                     <li class="border-t md:border-none">
                     <Link to={"/blog"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
@@ -62,27 +85,39 @@ function NavbarLayout() {
                    
 
                     <div className="flex md:order-2 py-2 ">
+                    
+                   
                     <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                        <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-                    }
-                    >
-                    <Dropdown.Header>
-                        <span className="block text-sm">Bonnie Green</span>
-                        <span className="block truncate text-sm font-medium">name@gmail.com</span>
-                    </Dropdown.Header>
-                    <Dropdown.Item>
-                        <Link to={"/login"} >Login</Link>
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                        <Link to={"/register"} >Register</Link>
-                    </Dropdown.Item>
-                 
-                    </Dropdown>
-                
-                </div>
+                        arrowIcon={false}
+                        inline
+                        label={
+                            loggedInUser ? <Avatar alt="User settings" img={loggedInUser.picture}  rounded /> : <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
+                        }
+                        >
+                        <Dropdown.Header>
+                        {loggedInUser ? (
+                            <>
+                                <img src={loggedInUser.picture} alt="User" className="w-8 h-8 mb-2 rounded-full" />
+                                <span className="block  font-semibold text-sm">{loggedInUser.name}</span>
+                                <span className="block   truncate text-sm font-medium">{loggedInUser.email}</span>
+                            </>
+                            ) : (
+                            <>
+                                <Avatar alt="User settings" className="flex justify-start" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded /> 
+                                <span className="block font-medium text-sm">Bonnie Green</span>
+                                <span className="block truncate text-sm font-medium">name@gmail.com</span>
+                            </>
+                            )}
+                        </Dropdown.Header>
+                        <Dropdown.Item>
+                            <LoginGoogle  onLogin={handleLogin}/>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            {loggedInUser ? <button className='font-semibold' onClick={handleLogout}>Logout</button>:''}
+
+                        </Dropdown.Item>
+                        </Dropdown>
+                    </div>
                     
                     
                 </ul>

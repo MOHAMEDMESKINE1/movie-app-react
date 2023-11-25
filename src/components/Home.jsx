@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import spider from '../assets/spider.jpg'
 import man from '../assets/man.jpg'
 import show from '../assets/show.jpg'
 import stage from '../assets/stage.jpg'
 import snow from '../assets/snow.jpg'
-import art from '../assets/art_.jpg'
 import batman from '../assets/batman.jpg'
 import sitting from '../assets/sitting.jpg'
 import wild from '../assets/wild.jpg'
@@ -16,8 +15,9 @@ import book from '../assets/book.jpg'
 import { Card } from 'flowbite-react';
 import { Carousel } from 'flowbite-react';
 import { Link } from 'react-router-dom';
-export default function Home() {
 
+
+export default function Home() {
 
     const [backgroundIndex, setBackgroundIndex] = useState(0);
     const images = [stage,man,show ];

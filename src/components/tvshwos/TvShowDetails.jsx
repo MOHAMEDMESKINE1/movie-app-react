@@ -64,14 +64,14 @@ export default function TvShowDetails () {
                 </Carousel>
             </div>
             
-                <div   class="md:w-full m-5 p-4   overflow-hidden shadow-lg  flex md:m-auto justify-center">
+                <div   class="md:w-full m-3 p-4   overflow-hidden shadow-lg  flex md:m-auto justify-center">
                     <div class="md:flex-shrink-0   ">
                      {tvshow?.poster_path  &&  <img class=" hidden md:block md:w-auto rounded-lg "
                         src={"https://image.tmdb.org/t/p/w500/"+tvshow?.poster_path}
                         alt="A Quiet Place movie poster" />}
                     </div>
                     <div   class="flex flex-col p-4   flex-grow md:px-8 md:py-4 rounded-lg bg-white text-gray-900">
-                        <div class="font-bold text-3xl md:text-2xl lg:text-4xl text-gray-800 movie--title">
+                        <div class="font-bold text-3xl  md:text-2xl lg:text-4xl text-gray-800 ">
                             {tvshow?.name} 
 
                             {/* relase */}
@@ -93,7 +93,7 @@ export default function TvShowDetails () {
                         </div>
                         <span class="   text-2xl  lg:mb-4 text-gray-800">{tvshow?.last_air_date}</span>
                         <div class="flex-grow">
-                            <p class="md:text-xl  text-gray-700 leading-snug truncate-overflow">{tvshow?.overview}</p>
+                            <p class="md:text-xl  text-gray-700 leading-snug truncate-overflow text-justify">{tvshow?.overview}</p>
                             {/* SEASONS */}
                             <h2 className="font-light my-2 text-gray-950 ">Episods & Seasons</h2>
                             <div className="flex   justify-start">
