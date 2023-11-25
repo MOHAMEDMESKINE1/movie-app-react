@@ -12,8 +12,6 @@ import TvShows from "./components/tvshwos/TvShows.jsx";
 import TvShowDetails from "./components/tvshwos/TvShowDetails.jsx";
 import Home from "./components/Home.jsx";
 import Blog from "./components/blog/Blog.jsx";
-import Login from "./components/Login.jsx";
-import Register from "./components/Register.jsx";
 import Error404 from "./components/Error404.jsx";
 import BookDetails from "./components/books/BookDetails.jsx";
 import Books from "./components/books/Books.jsx";
@@ -39,8 +37,6 @@ export default  function App ()  {
               <Route path="/books" element={<Books />} />
               <Route path="/books/details/:id" element={<BookDetails />} />
 
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<Error404 />} />
           </Routes>
