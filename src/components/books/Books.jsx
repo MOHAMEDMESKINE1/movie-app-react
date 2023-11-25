@@ -12,8 +12,7 @@ function Books() {
        
         const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
         setBooks(response.data.items);
-        console.log(response.data.items);
-
+       
     };
   
 

@@ -35,8 +35,10 @@ export default  function  TvShows() {
         return () => clearInterval(intervalId);
     
       }, [backgroundIndex, tvImages.length]);
+
     const handleViewMore = () => {
-    setVisibleTvShows((prevVisibleTvShows) => prevVisibleTvShows + 6);
+        
+        setVisibleTvShows((prevVisibleTvShows) => prevVisibleTvShows + 6);
     };
 
       const fetchAllTvShows =async () =>{
@@ -47,15 +49,9 @@ export default  function  TvShows() {
             const allTvShows = await axios.get(`https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}`);
             setTvShow(allTvShows.data.results);
 
-            console.log(allTvShows.data);
-
-         
-
-
             // Store the movie images
             setTvImages(allTvShows.data.results.map(tv_show => `https://image.tmdb.org/t/p/original/${tv_show.poster_path}`));
            
-            // console.log(allTvShows);
 
         } catch (error) {
         console.error('Error fetching tvshows:', error);

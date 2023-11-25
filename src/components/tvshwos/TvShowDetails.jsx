@@ -29,8 +29,6 @@ export default function TvShowDetails () {
             // display tv video
             const videostv = await useFetch(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=${apiKey}`);
             setVideo(videostv);
-            console.log('Videos for TV show with ID', id);
-            console.log(videostv);
 
         } catch (error) {
             console.error('Error fetching tvshow details:', error);

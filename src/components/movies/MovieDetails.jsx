@@ -23,7 +23,6 @@ export default function MovieDetails () {
             },
             });
             setMovie(response.data);
-            // console.log(response.data);
 
 
             const videostMovie = await useFetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`);

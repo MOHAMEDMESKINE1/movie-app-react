@@ -13,7 +13,6 @@ function BookDetails() {
           `https://www.googleapis.com/books/v1/volumes/${id}`
         );
         setBook(response.data);
-        console.log(response.data);
       };
 
     useEffect(()=>{

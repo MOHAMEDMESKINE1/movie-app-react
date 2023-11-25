@@ -10,8 +10,6 @@ function LoginGoogle({ onLogin }) {
             const credentialDecoded = jwtDecode(credentialResponse.credential)
             setUser(credentialDecoded)
             onLogin(credentialDecoded);
-            console.log(credentialDecoded);
-
     }
     const LoginFailed = () =>{
       
