@@ -45,23 +45,25 @@ function Books() {
     return (
         <div>
             <section className=' '  style={sectionStyle}>
-                <div className="md:h-screen py-48 flex items-center justify-center  min-w-full">
+                <div className=" md:h-screen py-48 flex items-center justify-center  ">
                     <div data-aos-easing="ease-in-sine"  data-aos-duration="1000"  data-aos='fade-right'  className=' flex items-center flex-col justify-center ' >
-                        <h1 className='uppercase text-white font-bold text-7xl md:text-9xl text-center text-shadow-lg'   >BOOKS </h1>
-                        <p className='lead uppercase text-white  text-center font-bold my-5 text-3xl md:text-5xl'>Navigate World Magic Books ! </p>
-                       
-                        <div className='flex justify-center m-auto '>
+                        <div className="m-3.5">
+                            <h1 className='uppercase text-white font-bold text-7xl md:text-9xl text-center text-shadow-lg'   >BOOKS </h1>
+                            <p className='lead uppercase text-white  text-center font-bold m-5 text-3xl md:text-5xl'>Navigate World Magic Books ! </p>
+
+                        </div>                       
+                        <div className='flex justify-center mx-auto '>
                    
                                         
                             <form onSubmit={handleSubmit}>   
                                 <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                                <div class="relative m-5">
+                                <div class="relative  m-5">
                                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                         </svg>
                                     </div>
-                                    <input onChange={handleChange} type="search" id="default-search" class="block w-96 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Books ..." required/>
+                                    <input onChange={handleChange} type="search" id="default-search" className="block w-80 md:max-w-md p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Books ..." required/>
                                     <button type="submit" class="text-white p-3 absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                                 </div>
                             </form>

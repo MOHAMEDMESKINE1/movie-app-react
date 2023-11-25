@@ -79,21 +79,21 @@ function Footer() {
                                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                                     <li class="mb-4 flex justify-start">
                                        
-                                        <a href="https://github.com/themesberg/flowbite" class=" hover:text-gray-800 hover:underline ">Github</a>
+                                        <a href="https://github.com/MOHAMEDMESKINE1" class=" hover:text-gray-800 hover:underline ">Github</a>
                                         
                                     </li>
                                     <li class="mb-4 justify-start">
-                                        <a href="https://discord.gg/4eeurUVvTy" class=" hover:text-gray-800 hover:underline">Discord</a>
+                                        <a href="#" class=" hover:text-gray-800 hover:underline">Discord</a>
                                     </li>
                                     <li class="mb-4 justify-start">
                                         
-                                        <a href="https://discord.gg/4eeurUVvTy" class=" hover:text-gray-800 hover:underline">Facebook</a>
+                                        <a href="#" class=" hover:text-gray-800 hover:underline">Facebook</a>
                                     </li>
                                     <li class="mb-4 justify-start">
-                                        <a href="https://discord.gg/4eeurUVvTy" class=" hover:text-gray-800 hover:underline">Instagram</a>
+                                        <a href="#" class=" hover:text-gray-800 hover:underline">Instagram</a>
                                     </li>
                                     <li class="mb-4 justify-start">
-                                        <a href="https://discord.gg/4eeurUVvTy" class=" hover:text-gray-800 hover:underline">X</a>
+                                        <a href="#" class=" hover:text-gray-800 hover:underline">X</a>
                                     </li>
                                 </ul>
                             </div>

@@ -30,7 +30,7 @@ function NavbarLayout() {
     return (
         <>
         
-            <nav class="nav flex flex-wrap items-center justify-between px-8 shadow-sm">
+            <nav class="flex flex-wrap items-center justify-between px-8 shadow-sm">
                 <div  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"  class="flex flex-no-shrink items-start mr-6 py-3 text-grey-darkest">
                 
                     <Link to={"/"} className='flex justify-start'>
