@@ -24,7 +24,6 @@ export default function TvShowDetails () {
             },
             });
             setTvShow(response.data);
-            console.log(response.data);
 
             // display tv video
             const videostv = await useFetch(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=${apiKey}`);

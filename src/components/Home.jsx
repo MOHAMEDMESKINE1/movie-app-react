@@ -21,7 +21,8 @@ export default function Home() {
 
     const [backgroundIndex, setBackgroundIndex] = useState(0);
     const images = [stage,man,show ];
-  
+    const [isLoading, setIsLoading] = useState(true);
+
     const sectionStyle = {
         backgroundImage: `url(${images[backgroundIndex]})`,
         backgroundSize: 'cover',
@@ -38,7 +39,6 @@ export default function Home() {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         height: '950px',
-       
       
     }
    
@@ -47,14 +47,27 @@ export default function Home() {
         const intervalId = setInterval(() => {
           setBackgroundIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 5000);
-    
+        setIsLoading(false)
         return () => clearInterval(intervalId); // Cleanup the interval when the component unmounts
     
       }, [backgroundIndex, images.length]);
+
+      if(isLoading){
+        return <div class="flex items-center justify-center  my-52 space-x-2">
+                    <div aria-label="Loading..." role="status">
+                        <svg width="300" height="300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" class="animate-spin w-16 h-16    stroke-slate-500">
+                        <path  d="M12 3v3m6.366-.366-2.12 2.12M21 12h-3m.366 6.366-2.12-2.12M12 21v-3m-6.366.366 2.12-2.12M3 12h3m-.366-6.366 2.12 2.12">
+                        </path>
+                        </svg>
+                        <span class="text-xs font-medium text-slate-500 m-auto">Loading...</span>
+
+                    </div>
+                </div>
+    }
     return (
         <>
             {/* home section */}
-            <section  style={sectionStyle}>
+            <section  style={sectionStyle} className=''>
                 <div className="md:h-screen py-32 md:py-52 flex items-center justify-center  min-w-full">
                     <div data-aos-easing="ease-in-sine"  data-aos-duration="2000"  data-aos='fade-right'  className=' flex items-center flex-col justify-center ' >
                         <h1 className='uppercase text-white font-bold text-7xl md:text-9xl text-center text-shadow-lg'   >PELICULA </h1>

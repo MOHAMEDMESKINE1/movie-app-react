@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import useFetch from '../../customHooks/useFetch';
 import { apiKey } from '../../ApiKey/key';
+import IsLoading from '../IsLoading';
 function Blog() {
 
     const [movies, setMovies] = useState([]);
@@ -52,6 +53,7 @@ function Blog() {
     },[]);
     return (
         <div>
+           
             <section className=" m-5">
                     <div className="container grid grid-cols-1 m-auto md:grid-cols-2    gap-1.5 py-3">
                         <div className="bg-white p-5 text-gray-900 ">
@@ -63,7 +65,7 @@ function Blog() {
                             <hr className="bg-gray-50" />
 
                             {
-                               movies&&  movies.slice(0,3).map(movie => (
+                                movies&&  movies.slice(0,3).map(movie => (
                                     <div className="py-2 text-gray-800 ">
                                         <h1 className="text-gray-900 my-3 text-2xl ">{movie.original_title} </h1>
                                         <img class="max-h-72    w-full bg-white p-2 shadow-lg object-content my-4" src={"https://image.tmdb.org/t/p/w500/"+movie.poster_path}  alt="image description"/>
@@ -124,35 +126,38 @@ function Blog() {
                         
 
                             {
-                                tvshwos && tvshwos.slice(0,4).map(tv_show => (
+                                
+                                    tvshwos && tvshwos.slice(0,4).map(tv_show => (
 
-                                    <div data-aos="zoom-in-up" className="bg-white p-5  text-gray-900 ">
+                                        <div data-aos="zoom-in-up" className="bg-white p-5  text-gray-900 ">
 
-                                                <div className="container grid md:grid-cols-2    gap-1 py-1">
+                                                    <div className="container grid md:grid-cols-2    gap-1 py-1">
 
-                                                    <img  src={"https://image.tmdb.org/t/p/w500/"+tv_show.poster_path} className=" shadow-md p-2 "/>
-                                                    <div className="my-4 mx-2">
-                                                        <p className="font-semibold mt-4 text-3xl">
-                                                            {tv_show.name}
-                                                        </p>
-                                                        <small className="font-bold mt-3 ">Released<span className=' ml-2 text-xs text-indigo-500'>February 5, 2019</span></small>
-                                                        <p className="mt-3 font-light text-justify">{tv_show.overview.slice(0,387)}</p>
-                                                        <span className="mt-3">
-                                                            <FontAwesomeIcon icon={ faStar} className='text-indigo-700 font-semibold '/> {tv_show.vote_average}
-                                                        </span>
-                                                        <p className="mt-3 font-bold text-justify">Media Type: <br />  <span className="uppercase">{tv_show.media_type}</span></p>
+                                                        <img  src={"https://image.tmdb.org/t/p/w500/"+tv_show.poster_path} className=" shadow-md p-2 "/>
+                                                        <div className="my-4 mx-2">
+                                                            <p className="font-semibold mt-4 text-3xl">
+                                                                {tv_show.name}
+                                                            </p>
+                                                            <small className="font-bold mt-3 ">Released<span className=' ml-2 text-xs text-indigo-500'>February 5, 2019</span></small>
+                                                            <p className="mt-3 font-light text-justify">{tv_show.overview.slice(0,387)}</p>
+                                                            <span className="mt-3">
+                                                                <FontAwesomeIcon icon={ faStar} className='text-indigo-700 font-semibold '/> {tv_show.vote_average}
+                                                            </span>
+                                                            <p className="mt-3 font-bold text-justify">Media Type: <br />  <span className="uppercase">{tv_show.media_type}</span></p>
+
+                                                        </div>
 
                                                     </div>
-
-                                                </div>
-                                    </div>
-                                ))
+                                        </div>
+                                    ))
                             }
                         
                         </div>
                     </div>
 
             </section>
+            
+          
         </div>
     );
 }

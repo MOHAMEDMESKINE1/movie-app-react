@@ -16,6 +16,7 @@ export default  function  TvShows() {
     const [searchQuery, setSearchQuery] = useState('');
     const [tvImages, setTvImages] = useState([]);
     const [visibleTvShows, setVisibleTvShows] = useState(4);
+    const [isLoading, setIsLoading] = useState(true);
 
     const sectionStyle = {
         backgroundImage: `url(${tvImages[backgroundIndex]})`,
@@ -31,7 +32,7 @@ export default  function  TvShows() {
         const intervalId = setInterval(() => {
             setBackgroundIndex((prevIndex) => (prevIndex + 1) % tvImages.length);
         }, 5000);
-    
+       
         return () => clearInterval(intervalId);
     
       }, [backgroundIndex, tvImages.length]);
@@ -51,7 +52,7 @@ export default  function  TvShows() {
 
             // Store the movie images
             setTvImages(allTvShows.data.results.map(tv_show => `https://image.tmdb.org/t/p/original/${tv_show.poster_path}`));
-           
+            setIsLoading(false)
 
         } catch (error) {
         console.error('Error fetching tvshows:', error);
@@ -87,7 +88,18 @@ export default  function  TvShows() {
         }
     }, [searchQuery]);
    
+    if(isLoading){
+        return <div class="flex items-center justify-center  my-52 space-x-2">
+                    <div aria-label="Loading..." role="status">
+                        <svg width="300" height="300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" class="animate-spin w-16 h-16    stroke-slate-500">
+                        <path  d="M12 3v3m6.366-.366-2.12 2.12M21 12h-3m.366 6.366-2.12-2.12M12 21v-3m-6.366.366 2.12-2.12M3 12h3m-.366-6.366 2.12 2.12">
+                        </path>
+                        </svg>
+                        <span class="text-xs font-medium text-slate-500 m-auto">Loading...</span>
 
+                    </div>
+                </div>
+    }
     return (
         <>
             

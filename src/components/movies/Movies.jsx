@@ -12,6 +12,7 @@ export default  function  Movies() {
     const [movies, setMovies] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [movieImages, setMovieImages] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [visibleMovies, setVisibleMovies] = useState(4);
 
@@ -48,7 +49,7 @@ export default  function  Movies() {
 
             // setMovies  Image
             setMovieImages(allMovies.map(movie => `https://image.tmdb.org/t/p/original/${movie.poster_path}`));
-
+            setIsLoading(false)
         } catch (error) {
         console.error('Error fetching movies:', error);
         }
@@ -86,10 +87,21 @@ export default  function  Movies() {
         }
     }, [searchQuery]);
     
-   
+    if(isLoading){
+        return <div class="flex items-center justify-center  my-52 space-x-2">
+                    <div aria-label="Loading..." role="status">
+                        <svg width="300" height="300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" class="animate-spin w-16 h-16    stroke-slate-500">
+                        <path  d="M12 3v3m6.366-.366-2.12 2.12M21 12h-3m.366 6.366-2.12-2.12M12 21v-3m-6.366.366 2.12-2.12M3 12h3m-.366-6.366 2.12 2.12">
+                        </path>
+                        </svg>
+                        <span class="text-xs font-medium text-slate-500 m-auto">Loading...</span>
+
+                    </div>
+                </div>
+    }
     return (
         <>
-
+         
             <section  style={sectionStyle}>
             <div className="h-screen flex items-center justify-center  min-w-full">
             <div className=' hidden  lg:flex items-center flex-col justify-center ' data-aos-easing="ease-in-sine"  data-aos-duration="2000"  data-aos='fade-right'>
