@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import  {useEffect, useState } from 'react';
 import spider from '../assets/spider.jpg'
 import man from '../assets/man.jpg'
 import show from '../assets/show.jpg'
@@ -53,13 +53,13 @@ export default function Home() {
       }, [backgroundIndex, images.length]);
 
       if(isLoading){
-        return <div class="flex items-center justify-center  my-52 space-x-2">
+        return <div className="flex items-center justify-center  my-52 space-x-2">
                     <div aria-label="Loading..." role="status">
                         <svg width="300" height="300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" class="animate-spin w-16 h-16    stroke-slate-500">
                         <path  d="M12 3v3m6.366-.366-2.12 2.12M21 12h-3m.366 6.366-2.12-2.12M12 21v-3m-6.366.366 2.12-2.12M3 12h3m-.366-6.366 2.12 2.12">
                         </path>
                         </svg>
-                        <span class="text-xs font-medium text-slate-500 m-auto">Loading...</span>
+                        <span className="text-xs font-medium text-slate-500 m-auto">Loading...</span>
 
                     </div>
                 </div>
@@ -68,9 +68,9 @@ export default function Home() {
         <>
             {/* home section */}
             <section  style={sectionStyle} className=''>
-                <div className="md:h-screen py-32 md:py-52 flex items-center justify-center  min-w-full">
+                <div className=" flex items-center justify-center   ">
                     <div data-aos-easing="ease-in-sine"  data-aos-duration="2000"  data-aos='fade-right'  className=' flex items-center flex-col justify-center ' >
-                        <h1 className='uppercase text-white font-bold text-7xl md:text-9xl text-center text-shadow-lg'   >PELICULA </h1>
+                        <h1 className='uppercase text-white font-bold text-7xl md:text-9xl text-center text-shadow-lg mt-32'    >PELICULA </h1>
                         <p className='lead uppercase text-white  text-center font-bold my-5 text-3xl md:text-5xl'>a modern way  to watch movies & series </p>
                         <div   className="flex  flex-row  lg:flex-row justify-center md:justify-start w-1/2  my-12">
                             <Link  to={"/movies"} className=' bg-transparent hover:bg-black  rounded-sm  text-center shadow-lg  hover:text-white  px-12 md:p-5    md:mb-0 md:w-full mx-2 border-2 uppercase text-white font-boldl  '><span className="">Explore Movies</span></Link>
@@ -176,7 +176,7 @@ export default function Home() {
                 </div>
                
                 
-                <div className=' py-14 flex items-center justify-center'>
+                <div className='   flex items-center justify-center'>
                     <div className="text-center">
                         <h1 className='text-3xl m-5 md:text-7xl font-bold'>DIRECT YOUR NEXT MASTERPIECE WITH PELICULA  </h1>
                         <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className=" mt-12 ">
@@ -199,31 +199,31 @@ export default function Home() {
             </section>
             {/* movies */}
             <section className='m-5'>
-                    <div className=" grid md:grid-cols-2  m-auto  gap-2 py-5">
+                    <div className=" grid md:grid-cols-2  m-auto  items-center gap-2 py-5">
                         
                         <div data-aos='fade-right'  className="">
                             <img src={album} className='h-auto object-cover ' alt="" />
                         </div>
                         
-                        <div className='md:py-36 p-3 m-5'>
-                            <h1 className="text-center text-3xl md:text-5xl font-bold mb-5">Advanced Movie & TV Show Search</h1>
-                            <p className="text-xl text-justify md:text-2xl font-light ">Discover movies and TV shows like never before with our advanced search system. Find your favorites effortlessly and explore new titles with ease.</p>
+                        <div className='p-3 m-5'>
+                            <h1 className="text-center text-3xl lg:text-5xl font-bold mb-5">Advanced Movie & TV Show Search</h1>
+                            <p className="text-xl text-justify lg:text-2xl font-light ">Discover movies and TV shows like never before with our advanced search system. Find your favorites effortlessly and explore new titles with ease.</p>
                         </div>
                     </div>
 
             </section>
             {/* movies */}
             <section className='m-5'>
-                    <div className=" grid md:grid-cols-2  m-auto  gap-2 py-5">
+                    <div className=" grid md:grid-cols-2  m-auto items-center  gap-2 py-5">
                         
                        
                         
-                        <div className='md:py-36 p-3 m-5'>
-                            <h1 className="text-center text-3xl md:text-5xl font-bold mb-5">Navigating the World of Books with Advanced Search</h1>
-                            <p className="text-xl text-justify md:text-2xl font-light ">Embark on a journey of literary discovery with our advanced search feature. Dive deep into the vast world of books, exploring genres, themes, and authors with precision and ease.</p>
+                        <div className='p-3 m-5'>
+                            <h1 className="text-center text-3xl lg:text-5xl font-bold mb-5">Navigating the World of Books with Advanced Search</h1>
+                            <p className="text-xl text-justify lg:text-2xl font-light ">Embark on a journey of literary discovery with our advanced search feature. Dive deep into the vast world of books, exploring genres, themes, and authors with precision and ease.</p>
                         </div>
                         <div data-aos='fade-up'  className="">
-                            <img src={book} className='h-auto w-auto  rounded-md shadow-lg ' alt="" />
+                            <img src={book} className='    rounded-md shadow-lg ' alt="" />
                         </div>
                     </div>
 
