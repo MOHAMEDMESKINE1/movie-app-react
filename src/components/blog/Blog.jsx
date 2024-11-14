@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import useFetch from '../../customHooks/useFetch';
 import { apiKey } from '../../ApiKey/key';
-import IsLoading from '../IsLoading';
 function Blog() {
 
     const [movies, setMovies] = useState([]);
     const [tvshwos, setTvShows] = useState([]);
     const [topRated, setTopRated] = useState([]);
+
 
     const fetchAllMovies =async () =>{
         
@@ -59,16 +59,18 @@ function Blog() {
                         <div className="bg-white p-5 text-gray-900 ">
                             <div className="flex justify-start text-gray-800">
                                 <Link to={"/"} className='mx-1' >Home / </Link>
-                                <Link to={"/blog"} className='text-indigo-500'> Blog</Link>
+                                <Link to={"/blog"} className='text-indigo-500'> Blog   </Link>
                             </div>
                             <h1 className="text-gray-900 my-3 text-2xl ">TOP 3 TRENDINGS MOVIES </h1>
                             <hr className="bg-gray-50" />
 
+
                             {
                                 movies&&  movies.slice(0,3).map(movie => (
-                                    <div className="py-2 text-gray-800 ">
-                                        <h1 className="text-gray-900 my-3 text-2xl ">{movie.original_title} </h1>
-                                        <img class="max-h-72    w-full bg-white p-2 shadow-lg object-content my-4" src={"https://image.tmdb.org/t/p/w500/"+movie.poster_path}  alt="image description"/>
+                                    
+                                    <div className="py-2 text-gray-800 " key={movie.id}>
+                                        <h1 className="text-gray-900 my-3 text-2xl " >{movie.original_title} </h1>
+                                        <img className="    bg-white p-2 shadow-lg  my-4" src={"https://image.tmdb.org/t/p/w500/"+movie.poster_path}  alt={movie.original_title}/>
                                         <div className="my-4">
                                                 <span className="mt-5 bg-blue-500  text-white p-1.5">{movie.media_type}</span>
                                                 <h2 className="font-semibold mt-4 text-3xl">
@@ -91,13 +93,13 @@ function Blog() {
 
                             <hr className="bg-gray-50" />
                             {
-                                topRated && topRated.slice(0,4).map(movie => (
+                                topRated && topRated.slice(0,6).map(movie => (
 
-                                    <div data-aos="zoom-out-left"  className="bg-white p-5  text-gray-900 ">
+                                    <div data-aos="zoom-out-left"  className="bg-white p-5  text-gray-900 "  key={movie.id}>
 
-                                                <div className="container grid md:grid-cols-2    gap-1 py-1">
+                                                <div className="container grid md:grid-cols-2  items-center  gap-1 py-1">
 
-                                                    <img  src={"https://image.tmdb.org/t/p/w500/"+movie.poster_path} className=" shadow-md p-2 "/>
+                                                    <img  src={"https://image.tmdb.org/t/p/w500/"+movie.poster_path} className="  shadow-md p-2 "/>
                                                     <div className="my-4 mx-2">
                                                         <p className="font-semibold mt-4 text-3xl">
                                                             {movie.original_title}
@@ -129,7 +131,7 @@ function Blog() {
                                 
                                     tvshwos && tvshwos.slice(0,4).map(tv_show => (
 
-                                        <div data-aos="zoom-in-up" className="bg-white p-5  text-gray-900 ">
+                                        <div data-aos="zoom-in-up" className="bg-white p-5  text-gray-900 " key={tv_show.id}>
 
                                                     <div className="container grid md:grid-cols-2    gap-1 py-1">
 

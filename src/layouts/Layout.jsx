@@ -1,4 +1,3 @@
-import React from 'react';
 import NavbarLayout from './NavbarLayout';
 import  Footer  from '../layouts/Footer'
 function Layout( {children}) {

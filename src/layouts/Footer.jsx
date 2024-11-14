@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from '../assets/logoo.png'
 import { Link } from 'react-router-dom';
 import witcher from '../assets/witcher.jpeg'
@@ -40,12 +39,12 @@ function Footer() {
     
     return (
         <div className='' >
-           <footer class="bg-gray-100 " style={backGroundMovie} >
+           <footer className="bg-gray-100 " style={backGroundMovie} >
               
-                <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                    <div class="md:flex md:justify-between">
-                        <div class="mb-6 md:mb-0">
-                            <div  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"  class="flex flex-no-shrink items-start mr-6 py-3 text-grey-darkest">
+                <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                    <div className="md:flex md:justify-between">
+                        <div className="mb-6 md:mb-0">
+                            <div  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"  className="flex flex-no-shrink items-start mr-6 py-3 text-grey-darkest">
                         
                                     <Link to={"/"} className='flex justify-start'>
                                         <img src={Logo} className="mr-2 h-10 w-10" alt="Flowbite React Logo" />
@@ -53,58 +52,58 @@ function Footer() {
 
                                     </Link>
                             </div>
-                            <span class="text-sm text-gray-500 sm:text-center ">© 2023  <Link to="/" class="hover:underline">PELICULA </Link>. All Rights Reserved.</span>
+                            <span className="text-sm text-gray-500 sm:text-center ">© 2023  <Link to="/" className="hover:underline">PELICULA </Link>. All Rights Reserved.</span>
 
                         </div>
-                        <div class="grid grid-cols-2 gap-5 sm:gap-8 sm:grid-cols-3 ">
+                        <div className="grid grid-cols-2 gap-5 sm:gap-8 sm:grid-cols-3 ">
                             <div className=''>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quick Links</h2>
-                                <ul class="text-gray-500   ">
-                                    <li class="mb-4">
-                                        <Link to="/" class="hover:text-gray-800  hover:underline">PELICULA </Link>
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quick Links</h2>
+                                <ul className="text-gray-500   ">
+                                    <li className="mb-4">
+                                        <Link to="/" className="hover:text-gray-800  hover:underline">PELICULA </Link>
                                     </li>
-                                    <li class="mb-4">
-                                        <Link to="/tvshows" class="hover:text-gray-800  hover:underline">TvShows </Link>
+                                    <li className="mb-4">
+                                        <Link to="/tvshows" className="hover:text-gray-800  hover:underline">TvShows </Link>
                                     </li>
-                                    <li class="mb-4">
-                                        <Link to="/movies" class="hover:text-gray-800  hover:underline">Movies </Link>
+                                    <li className="mb-4">
+                                        <Link to="/movies" className="hover:text-gray-800  hover:underline">Movies </Link>
                                     </li>
-                                    <li class="mb-4">
-                                        <Link to="/blog" class="hover:text-gray-800  hover:underline">Blog </Link>
+                                    <li className="mb-4">
+                                        <Link to="/blog" className="hover:text-gray-800  hover:underline">Blog </Link>
                                     </li>
                                 </ul>
                             </div>
                             <div  className=''>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                                <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                                    <li class="mb-4 flex justify-start">
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                                    <li className="mb-4 flex justify-start">
                                        
-                                        <a href="https://github.com/MOHAMEDMESKINE1" class=" hover:text-gray-800 hover:underline ">Github</a>
+                                        <a href="https://github.com/MOHAMEDMESKINE1" className=" hover:text-gray-800 hover:underline ">Github</a>
                                         
                                     </li>
-                                    <li class="mb-4 justify-start">
-                                        <a href="#" class=" hover:text-gray-800 hover:underline">Discord</a>
+                                    <li className="mb-4 justify-start">
+                                        <a href="#" className=" hover:text-gray-800 hover:underline">Discord</a>
                                     </li>
-                                    <li class="mb-4 justify-start">
+                                    <li className="mb-4 justify-start">
                                         
-                                        <a href="#" class=" hover:text-gray-800 hover:underline">Facebook</a>
+                                        <a href="#" className=" hover:text-gray-800 hover:underline">Facebook</a>
                                     </li>
-                                    <li class="mb-4 justify-start">
-                                        <a href="#" class=" hover:text-gray-800 hover:underline">Instagram</a>
+                                    <li className="mb-4 justify-start">
+                                        <a href="#" className=" hover:text-gray-800 hover:underline">Instagram</a>
                                     </li>
-                                    <li class="mb-4 justify-start">
-                                        <a href="#" class=" hover:text-gray-800 hover:underline">X</a>
+                                    <li className="mb-4 justify-start">
+                                        <a href="#" className=" hover:text-gray-800 hover:underline">X</a>
                                     </li>
                                 </ul>
                             </div>
                             <div>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                                <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                                    <li class="mb-4">
-                                        <a href="#" class="hover:text-gray-800 hover:underline">Privacy Policy</a>
+                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                                    <li className="mb-4">
+                                        <a href="#" className="hover:text-gray-800 hover:underline">Privacy Policy</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="hover:text-gray-800 hover:underline">Terms &amp; Conditions</a>
+                                        <a href="#" className="hover:text-gray-800 hover:underline">Terms &amp; Conditions</a>
                                     </li>
                                 </ul>
                             </div>
@@ -113,7 +112,7 @@ function Footer() {
                     
                 </div>
             </footer>
-            <button onClick={scrollToTop} id="scrollToTopBtn" class="fixed bottom-20 right-10 md:right-5 bg-gray-900   text-white rounded-full   border p-3.5 border-gray-300 cursor-pointer hidden">
+            <button onClick={scrollToTop} id="scrollToTopBtn" className="fixed bottom-20 right-10 md:right-5 bg-gray-900   text-white rounded-full   border p-3.5 border-gray-300 cursor-pointer hidden">
                 <FontAwesomeIcon   icon={faArrowUp} bounce/>
             </button>
         </div>

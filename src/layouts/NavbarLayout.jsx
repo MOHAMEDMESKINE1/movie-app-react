@@ -30,8 +30,8 @@ function NavbarLayout() {
     return (
         <>
         
-            <nav class="flex flex-wrap items-center justify-between px-8 shadow-sm">
-                <div  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"  class="flex flex-no-shrink items-start mr-6 py-3 text-grey-darkest">
+            <nav className="flex flex-wrap items-center justify-between px-8 shadow-sm">
+                <div  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"  className="flex flex-no-shrink items-start mr-6 py-3 text-grey-darkest">
                 
                     <Link to={"/"} className='flex justify-start'>
                         <img src={Logo} className="mr-2 h-10 w-10" alt="Flowbite React Logo" />
@@ -40,44 +40,44 @@ function NavbarLayout() {
                     </Link>
                 </div>
 
-                <input class="menu-btn hidden" type="checkbox" id="menu-btn"/>
-                <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
-                    <span class="navicon bg-grey-darkest flex items-center relative"></span>
+                <input className="menu-btn hidden" type="checkbox" id="menu-btn"/>
+                <label className="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+                    <span className="navicon bg-grey-darkest flex items-center relative"></span>
                 </label>
 
-                <ul class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto">
+                <ul className="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto">
 
-                    <li class="border-t md:border-none">
-                        <Link to={"/"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                    <li className="border-t md:border-none">
+                        <Link to={"/"} className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
                         
                         <FontAwesomeIcon icon={faHome}   className=' text-xs text-gray-900 mr-2'/>  Home
                         </Link>
                     </li>
 
-                    <li class="border-t md:border-none">
-                    <Link to={"/tvshows"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                    <li className="border-t md:border-none">
+                    <Link to={"/tvshows"} className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
                         <FontAwesomeIcon icon={faTvAlt}   className=' text-xs text-gray-900 mr-2'/>
                             TvShows
                     </Link>
                     </li>
                     
-                    <li class="border-t md:border-none">
-                    <Link to={"/movies"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                    <li className="border-t md:border-none">
+                    <Link to={"/movies"} className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
                         <FontAwesomeIcon icon={faVideo}   className=' text-xs text-gray-900 mr-2'/>
                         Movies
                     </Link> 
                     </li>
                    
-                    <li class="border-t md:border-none">
-                        <Link to={"/books"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                    <li className="border-t md:border-none">
+                        <Link to={"/books"} className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
                             <FontAwesomeIcon icon={faBook}   className=' text-xs text-gray-900 mr-2'/>
                             Books
                         </Link> 
                     </li>
                    
                     
-                    <li class="border-t md:border-none">
-                    <Link to={"/blog"} class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                    <li className="border-t md:border-none">
+                    <Link to={"/blog"} className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
                         <FontAwesomeIcon icon={faBlog}   className=' text-xs text-gray-900 mr-2'/>
                         Blog
                     </Link> 
