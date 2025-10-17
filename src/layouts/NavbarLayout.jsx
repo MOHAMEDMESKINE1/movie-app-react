@@ -68,13 +68,13 @@ function NavbarLayout() {
                     </Link> 
                     </li>
                    
-                    <li className="border-t md:border-none">
+                    {/* <li className="border-t md:border-none">
                         <Link to={"/books"} className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
                             <FontAwesomeIcon icon={faBook}   className=' text-xs text-gray-900 mr-2'/>
                             Books
                         </Link> 
                     </li>
-                   
+                    */}
                     
                     <li className="border-t md:border-none">
                     <Link to={"/blog"} className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
