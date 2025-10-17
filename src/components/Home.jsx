@@ -219,8 +219,8 @@ export default function Home() {
                        
                         
                         <div className='p-3 m-5'>
-                            <h1 className="text-center text-3xl lg:text-5xl font-bold mb-5">Navigating the World of Books with Advanced Search</h1>
-                            <p className="text-xl text-justify lg:text-2xl font-light ">Embark on a journey of literary discovery with our advanced search feature. Dive deep into the vast world of books, exploring genres, themes, and authors with precision and ease.</p>
+                            <h1 className="text-center text-3xl lg:text-5xl font-bold mb-5">Navigating the World of Movies with Advanced Search</h1>
+                            <p className="text-xl text-justify lg:text-2xl font-light ">Embark on a journey of cinematic discovery with our advanced search feature. Dive deep into the vast world of films, exploring genres, themes, and directors with precision and ease.</p>
                         </div>
                         <div data-aos='fade-up'  className="">
                             <img src={book} className='    rounded-md shadow-lg ' alt="" />

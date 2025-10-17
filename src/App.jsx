@@ -34,8 +34,8 @@ export default  function App ()  {
               <Route path="/movies" element={<Movies />} />
               <Route path="/movies/details/:id" element={<MovieDetails />} />
 
-              <Route path="/books" element={<Books />} />
-              <Route path="/books/details/:id" element={<BookDetails />} />
+              {/* <Route path="/books" element={<Books />} />
+              <Route path="/books/details/:id" element={<BookDetails />} /> */}
 
               <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<Error404 />} />
