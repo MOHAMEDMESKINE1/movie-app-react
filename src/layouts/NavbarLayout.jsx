@@ -11,8 +11,6 @@ function NavbarLayout() {
     const [loggedInUser, setLoggedInUser] = useState(null);
     useEffect(() => {
         // Check local storage for user data on page load
-
-        
         const storedUser = localStorage.getItem('loggedInUser');
         if (storedUser) {
           setLoggedInUser(JSON.parse(storedUser));
